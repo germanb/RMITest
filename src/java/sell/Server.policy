@@ -1,0 +1,3 @@
+grant codeBase "file:/home/gbringas/Dev/workspace/ItemsAdmin/src/java/" {
+    permission java.security.AllPermission;
+};

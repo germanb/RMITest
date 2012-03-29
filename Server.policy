@@ -1,0 +1,3 @@
+grant codeBase "file:/home/gbringas/Dev/workspace/Televentas/src/" {
+    permission java.security.AllPermission;
+};
