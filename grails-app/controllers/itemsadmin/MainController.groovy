@@ -23,13 +23,13 @@ class MainController {
 		sell.itemNumber = params.itemNumber
 		sell.price = params.price
 		println params.name
-		Registry registry = LocateRegistry.getRegistry();
+		Registry registry = LocateRegistry.getRegistry("192.168.1.117", 3001);
 		Methods stub = (Methods) registry.lookup("Hello");
 		String status = stub.addSell(sell);
 	}
 	
 	def list = {
-		Registry registry = LocateRegistry.getRegistry();
+		Registry registry = LocateRegistry.getRegistry("192.168.1.117", 3001);
 		Methods stub = (Methods) registry.lookup("Hello");
 		List sellList = stub.sellList();
 		println sellList[0].name
