@@ -7,7 +7,7 @@ public class RegistryManager {
 
 	private static Methods stub = null;
 	private static Registry registry = null;
-	private static String host = "192.168.1.114";
+	private static String host = "192.168.1.117";
 	private static Integer port = 3001;
 	
 	protected RegistryManager() {
