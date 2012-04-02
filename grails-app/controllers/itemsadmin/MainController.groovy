@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import sell.Methods; 
 import sell.Sell;
+import sell.RegistryManager;
 
 class MainController {
 	
@@ -22,15 +23,13 @@ class MainController {
 		sell.docNumber = params.docNumber
 		sell.itemNumber = params.itemNumber
 		sell.price = params.price
-		println params.name
-		Registry registry = LocateRegistry.getRegistry("192.168.1.117", 3001);
-		Methods stub = (Methods) registry.lookup("Hello");
+		println "${params.name} ok"
+		Methods stub = RegistryManager.getStub();
 		String status = stub.addSell(sell);
 	}
 	
 	def list = {
-		Registry registry = LocateRegistry.getRegistry("192.168.1.117", 3001);
-		Methods stub = (Methods) registry.lookup("Hello");
+		Methods stub = RegistryManager.getStub();
 		List sellList = stub.sellList();
 		println sellList[0].name
 		render(view:"list" ,model:[slist: sellList])

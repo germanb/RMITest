@@ -1,7 +1,6 @@
 package sell;
 
 import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -25,7 +24,7 @@ public class Server implements Methods {
 			sellList = new ArrayList<Sell>();
 			Server obj = new Server();
 			Methods stub = (Methods) UnicastRemoteObject.exportObject(obj, 0);
-			Registry registry = LocateRegistry.getRegistry("192.168.1.117", 3001);
+			Registry registry = RegistryManager.getRegistry();
 			registry.bind("Hello", stub);
 			System.err.println("Server ready");
 		} catch (Exception e) {

@@ -1,0 +1,11 @@
+Trabajo Practico Sistemas distribuidos y paralelismo
+----------------------------------------------------------
+
+
+1- Modificar Server con la ip del servidor
+2- Lanzar rmi registry dentro de la carpeta donde correremos el servidor
+3- java sell.Server
+4- Modificar cliente con ip del servidor
+5- Lanzar cliente
+6- Modificar app de grails
+7- Lanzar grails
